@@ -1,0 +1,13 @@
+function [ list ] = filename_reader(directory_name)
+%filename_reader takes the visible filenames from a file and puts them into
+%a list.
+
+p = struct2cell(dir(directory_name));
+[m,n] = size(p)
+for col = 1:n
+    if regexp(p(1,col),'^\.','match') == True
+list = p(1,:);
+
+
+end
+
